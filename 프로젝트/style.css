@@ -1,0 +1,287 @@
+body {
+    font-family: normal 1rem/1.5rem 'Noto Sans KR', sans-serif;
+    margin: 0; /*웹 페이지를 상단 바가 다 채움*/
+    font-family: 'Roboto', sans-serif; /*body 내 모든 포튼 동일 적용*/
+}
+.navbar {
+    display: flex; /*한 줄에 나란히*/
+    justify-content: space-between; /*스페이스를 사이사이에 넣음*/
+    align-items: center; /*중앙 배치*/
+    background-color: black;
+    padding: 8px 12px; /*navbar 크기 조정*/
+}
+a{
+    text-decoration: none;/*.없앰*/
+    color: white;
+}
+.navbar_logo {
+    font-size: 24px;
+    color : white;
+}
+.navbar_logo {
+    color: orange;    
+}
+
+.navbar_logo img{
+    width: 50px;
+    border-radius: 10px;
+}
+
+.navbar_menu {
+    display: flex; /*한 줄에 하나씩 나옴*/
+    list-style:none; /*홈이 같지 않음*/
+    padding-left: 0; /*이렇게 지정해서 중앙에 배치*/
+}
+.navbar_menu li {
+    padding: 8px 12px; /*메뉴안 내용들의 간격 조정*/
+}
+.navbar_menu li:hover {/*클릭시 색깔 변함*/
+    background-color: #d49466;
+    border-radius: 4px; /*모서리 둥글게*/
+}
+.navbar_icons{
+    color: white;
+    display: flex;
+    list-style:none;    
+    padding-left: 0; /*중앙 배치*/
+}
+.navbar_icons li {
+    padding: 8px 12px;
+}
+.navbar_toogleBtn { /*위치 조정*/
+    display: none; /*큰 크기때는 안 보이게 함*/
+    position: absolute; /*제일 위에 배치*/
+    right: 32px; /*오른쪽에서 32px 떨어진 곳에 배치*/
+    font-size: 24px;
+    color: white;
+}
+@media screen and (max-width: 1075px) { /*영상에선 768px*/
+    .navbar {
+        flex-direction: column; /*기존은 row, column으로 아래로 내림*/
+        align-items: flex-start; /*왼쪽으로 이동*/
+    }
+    .navbar_menu{
+        display: none; /*화면에서 사라짐*/
+        flex-direction: column;
+        align-items: center; /*중앙배치*/
+        width: 100% /*align-items가 반응하지 않는 부분을 width가 보완*/
+    }
+    .navbar_menu li{ /*hover부분이 넓어짐*/
+        width: 100%; 
+        text-align: center;
+    }
+    .navbar_toogleBtn{/*화면이 작아질때만 표시되도록 함*/
+        display: block; 
+    }
+    .navbar_menu.active,
+    .navbar_icons.active { /*navbar_toogleBtn이 클릭시 활성화*/
+        display: flex;    
+    }
+}
+
+.fa,.fab,.fad,.fal,.far,.fas{
+	font-weight: 900 !important;
+}
+
+#carouselExampleIndicators img {
+    height: 820px;
+}
+
+.one {
+    background-color: violet;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: sticky;
+    top: 700px;
+    left: 1600px;
+s
+}
+
+.one_text {
+    color: #263343;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 40px;
+}
+
+/* 지영님 css */
+
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    font-family: normal 1rem/1.5rem 'Noto Sans KR', sans-serif;
+    background-color: #ff9641ef;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 100vw;
+    height: 100vh;
+    /* padding: 20px; */
+    background: rgba(0, 0, 0, .4);
+
+
+}
+
+.box p {
+    color: #aaa;
+    margin-bottom: 10px;
+    font-size: 35pt;
+}
+
+p:hover {
+    color: #fff
+}
+
+.box span {
+    position: relative;
+    font-weight: bold;
+    color: #fff;
+}
+
+.box span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background: rgba(239, 190, 85, 0.6);
+}
+
+.box p:hover span::after {
+    width: 100%;
+    transition: width .3s;
+}
+/* 지영님 css */
+
+.timer {
+    background: no-repeat center url("./img/section/스톱워치_sec.png");
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+
+.planner {
+    background: no-repeat center url("./img/section/플래너_sec.png");
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+.group {
+    background: no-repeat center url("./img/section/그룹_sec.png");
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+
+.timer > .add1 {
+    position: relative;
+    left: 750px;
+}
+
+.planner > .add2 {
+    position: relative;
+    left: 550px;
+    top: 320px;
+}
+
+.group > .add3 {
+    position: relative;
+    left: 1000px;
+    top: 150px;
+}
+
+.timer > .add1 img{
+    animation-name: under;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+} 
+
+.planner > .add2 img{
+    animation-name: side;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+} 
+
+.group > .add3 img {
+    animation-name: shake;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes under {
+    0% {
+        transform: translate(250px,250px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes side {
+    0% {
+        transform: translateX(-900px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.imgs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    -webkit-filter: blur(3px);
+    filter: blur(5px);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.img1,.img2,.img3 {  
+    padding: 0 20px 0 20px;
+}
+
+.imgs:hover {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+
+footer {
+    padding: 40px 100px 40px 100px;
+    background-color: #5D5D5D;
+    display: block;
+    color: white;
+}
